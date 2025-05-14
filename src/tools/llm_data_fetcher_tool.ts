@@ -149,7 +149,7 @@ const rateLimiter = new RateLimiter(3); // 3 calls per minute
 export const llmDataFetcherTool = {
 	name: "fetch_llm_data",
 	description:
-		"Fetches LLM data from starwind.dev (rate limited to 3 requests per minute, with caching)",
+		"Fetches LLM data from filament.eu1.phsdp.com (rate limited to 3 requests per minute, with caching)",
 	inputSchema: {
 		type: "object",
 		properties: {
@@ -163,7 +163,7 @@ export const llmDataFetcherTool = {
 	handler: async (args: LlmDataFetcherArgs) => {
 		// Determine which URL to use
 		const isFull = args.full === true;
-		const url = isFull ? "https://starwind.dev/llms-full.txt" : "https://starwind.dev/llms.txt";
+		const url = isFull ? "https://filament.eu1.phsdp.com/llms-full.txt" : "https://filament.eu1.phsdp.com/llms.txt";
 		const cacheKey = `llm_data_${isFull ? "full" : "standard"}`;
 		const cacheTtl = isFull ? CACHE_TTL.FULL_LLM_DATA : CACHE_TTL.STANDARD_LLM_DATA;
 

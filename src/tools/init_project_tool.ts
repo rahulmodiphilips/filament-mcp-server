@@ -1,5 +1,5 @@
 /**
- * Tool for initializing a new project with Starwind UI
+ * Tool for initializing a new project with Filament
  */
 
 /**
@@ -17,7 +17,7 @@ export interface InitProjectArgs {
  */
 export const initProjectTool = {
 	name: "init_project",
-	description: "Initializes a new project with Starwind UI",
+	description: "Initializes a new project with Filament",
 	inputSchema: {
 		type: "object",
 		properties: {
@@ -37,23 +37,23 @@ export const initProjectTool = {
 
 		switch (packageManager) {
 			case "npm":
-				initCommand = "npx starwind@latest init --defaults";
+				initCommand = "npx filament@latest init --defaults";
 				break;
 			case "yarn":
-				initCommand = "yarn dlx starwind@latest init --defaults";
+				initCommand = "yarn dlx filament@latest init --defaults";
 				break;
 			case "pnpm":
-				initCommand = "pnpm dlx starwind@latest init --defaults";
+				initCommand = "pnpm dlx filament@latest init --defaults";
 				break;
 			default:
-				initCommand = "npx starwind@latest init --defaults";
+				initCommand = "npx filament@latest init --defaults";
 		}
 
 		return {
 			packageManager,
 			command: initCommand,
 			timestamp: new Date().toISOString(),
-			instructions: "Run this command in your project directory to initialize Starwind UI",
+			instructions: "Run this command in your project directory to initialize Filament",
 			note: "This will create or modify files in your project directory. Make sure to review the changes and have a clean git working tree before running.",
 		};
 	},

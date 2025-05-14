@@ -23,7 +23,7 @@ export interface Config {
 
 const config: Config = {
 	server: {
-		name: "Starwind MCP Server",
+		name: "Filament MCP Server",
 		version: "0.0.1",
 	},
 	tools: {

@@ -1,5 +1,5 @@
 /**
- * Tool for generating component installation commands for Starwind UI
+ * Tool for generating component installation commands for Filament
  */
 
 /**
@@ -21,7 +21,7 @@ export interface InstallComponentArgs {
  */
 export const installComponentTool = {
 	name: "install_component",
-	description: "Generates installation commands for Starwind UI components",
+	description: "Generates installation commands for Filament components",
 	inputSchema: {
 		type: "object",
 		properties: {
@@ -65,16 +65,16 @@ export const installComponentTool = {
 
 		switch (packageManager) {
 			case "npm":
-				baseCommand = "npx starwind@latest add";
+				baseCommand = "npx filament@latest add";
 				break;
 			case "yarn":
-				baseCommand = "yarn dlx starwind@latest add";
+				baseCommand = "yarn dlx filament@latest add";
 				break;
 			case "pnpm":
-				baseCommand = "pnpm dlx starwind@latest add";
+				baseCommand = "pnpm dlx filament@latest add";
 				break;
 			default:
-				baseCommand = "npx starwind@latest add";
+				baseCommand = "npx filament@latest add";
 		}
 
 		// Common component options
@@ -110,8 +110,8 @@ export const installComponentTool = {
 				all: `${baseCommand} --all`,
 			},
 			instructions:
-				"Run one of these commands in your project directory to install Starwind UI components. You can combine multiple components in a single command.",
-			note: "Make sure you have initialized Starwind UI first with the init command.",
+				"Run one of these commands in your project directory to install Filament components. You can combine multiple components in a single command.",
+			note: "Make sure you have initialized Filament first with the init command.",
 		};
 	},
 };

@@ -1,6 +1,6 @@
 /**
  * Documentation Tool for the MCP Server
- * Provides main documentation links for Starwind UI
+ * Provides main documentation links for Filament
  */
 
 /**
@@ -22,36 +22,34 @@ export interface DocumentationArgs {
 
 // Documentation URLs
 const DOCS_URLS = {
-	home: "https://starwind.dev/",
-	"getting-started": "https://starwind.dev/docs/getting-started/",
-	cli: "https://starwind.dev/docs/getting-started/cli/",
-	installation: "https://starwind.dev/docs/getting-started/installation/",
-	theming: "https://starwind.dev/docs/getting-started/theming/",
-	components: "https://starwind.dev/docs/components/",
-	full: "https://starwind.dev/llms-full.txt",
+	home: "https://filament.eu1.phsdp.com/",
+	"getting-started": "https://filament.eu1.phsdp.com/docs/getting-started/",
+	cli: "https://filament.eu1.phsdp.com/docs/getting-started/cli/",
+	installation: "https://filament.eu1.phsdp.com/docs/getting-started/installation/",
+	theming: "https://filament.eu1.phsdp.com/docs/getting-started/theming/",
+	components: "https://filament.eu1.phsdp.com/docs/components/",
+	full: "https://filament.eu1.phsdp.com/llms-full.txt",
 };
 
 // Available components with their documentation URLs
 const COMPONENTS = {
-	accordion: "https://starwind.dev/docs/components/accordion",
-	alert: "https://starwind.dev/docs/components/alert",
-	avatar: "https://starwind.dev/docs/components/avatar",
-	badge: "https://starwind.dev/docs/components/badge",
-	breadcrumb: "https://starwind.dev/docs/components/breadcrumb",
-	button: "https://starwind.dev/docs/components/button",
-	card: "https://starwind.dev/docs/components/card",
-	checkbox: "https://starwind.dev/docs/components/checkbox",
-	dialog: "https://starwind.dev/docs/components/dialog",
-	dropdown: "https://starwind.dev/docs/components/dropdown",
-	input: "https://starwind.dev/docs/components/input",
-	label: "https://starwind.dev/docs/components/label",
-	pagination: "https://starwind.dev/docs/components/pagination",
-	select: "https://starwind.dev/docs/components/select",
-	switch: "https://starwind.dev/docs/components/switch",
-	table: "https://starwind.dev/docs/components/table",
-	tabs: "https://starwind.dev/docs/components/tabs",
-	textarea: "https://starwind.dev/docs/components/textarea",
-	tooltip: "https://starwind.dev/docs/components/tooltip",
+	avatar: "https://filament.eu1.phsdp.com/docs/components/avatar",
+	badge: "https://filament.eu1.phsdp.com/docs/components/badge",
+	breadcrumb: "https://filament.eu1.phsdp.com/docs/components/breadcrumb",
+	button: "https://filament.eu1.phsdp.com/docs/components/button",
+	card: "https://filament.eu1.phsdp.com/docs/components/card",
+	checkbox: "https://filament.eu1.phsdp.com/docs/components/checkbox",
+	dialog: "https://filament.eu1.phsdp.com/docs/components/dialog",
+	dropdown: "https://filament.eu1.phsdp.com/docs/components/dropdown",
+	input: "https://filament.eu1.phsdp.com/docs/components/input",
+	label: "https://filament.eu1.phsdp.com/docs/components/label",
+	pagination: "https://filament.eu1.phsdp.com/docs/components/pagination",
+	select: "https://filament.eu1.phsdp.com/docs/components/select",
+	switch: "https://filament.eu1.phsdp.com/docs/components/switch",
+	table: "https://filament.eu1.phsdp.com/docs/components/table",
+	tabs: "https://filament.eu1.phsdp.com/docs/components/tabs",
+	textarea: "https://filament.eu1.phsdp.com/docs/components/textarea",
+	tooltip: "https://filament.eu1.phsdp.com/docs/components/tooltip",
 };
 
 // Define the type for component names
@@ -62,7 +60,7 @@ type ComponentName = keyof typeof COMPONENTS;
  */
 export const documentationTool = {
 	name: "get_documentation",
-	description: "Returns documentation links for Starwind UI",
+	description: "Returns documentation links for Filament",
 	inputSchema: {
 		type: "object",
 		properties: {
@@ -104,7 +102,7 @@ export const documentationTool = {
 				response.documentationType = "component";
 				response.component = componentName;
 				response.url = COMPONENTS[componentName as ComponentName];
-				response.importExample = `import { ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} } from "@/components/starwind/${componentName}";`;
+				response.importExample = `import { ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} } from "@/components/filament/${componentName}";`;
 			} else {
 				response.documentationType = "components";
 				response.url = DOCS_URLS.components;
@@ -128,7 +126,7 @@ export const documentationTool = {
 					fullReference: DOCS_URLS.full,
 				};
 				response.description =
-					"Starwind UI is an open-source component library for Astro projects, styled with Tailwind CSS v4. It provides accessible, customizable components that can be added directly to your projects.";
+					"Filament is an open-source component library for Astro projects, styled with Tailwind CSS v4. It provides accessible, customizable components that can be added directly to your projects.";
 				response.availableComponents = Object.keys(COMPONENTS);
 			}
 			// For components listing
@@ -139,7 +137,7 @@ export const documentationTool = {
 					url,
 				}));
 				response.importPattern =
-					'import { ComponentName } from "@/components/starwind/component-name";';
+					'import { ComponentName } from "@filament/react";';
 			}
 			// For other doc types
 			else {
