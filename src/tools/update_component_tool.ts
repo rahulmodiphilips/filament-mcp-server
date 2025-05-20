@@ -1,5 +1,5 @@
 /**
- * Tool for generating component update commands for Starwind UI
+ * Tool for generating component update commands for Filament
  */
 
 /**
@@ -21,7 +21,7 @@ export interface UpdateComponentArgs {
  */
 export const updateComponentTool = {
 	name: "update_component",
-	description: "Generates update commands for Starwind UI components",
+	description: "Generates update commands for Filament components",
 	inputSchema: {
 		type: "object",
 		properties: {
@@ -107,7 +107,7 @@ export const updateComponentTool = {
 				all: `${baseCommand} --all --yes`,
 			},
 			instructions:
-				"Run one of these commands in your project directory to update Starwind UI components. You can combine multiple components in a single command.",
+				"Run one of these commands in your project directory to update Filament components. You can combine multiple components in a single command.",
 			note: "The update command will check for and apply updates to the specified components and will overwrite existing files. Use --yes to skip confirmation prompts.",
 		};
 	},

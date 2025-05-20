@@ -1,8 +1,8 @@
-# Starwind UI MCP Server
+# Filament MCP Server
 
 [![smithery badge](https://smithery.ai/badge/@Boston343/starwind-ui-mcp)](https://smithery.ai/server/@Boston343/starwind-ui-mcp) [![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/9878a189-46ec-462c-903f-a72276f707e3)
 
-A TypeScript implementation of a Model Context Protocol (MCP) server for Starwind UI, providing tools to help developers work with Starwind UI components.
+A TypeScript implementation of a Model Context Protocol (MCP) server for Filament, providing tools to help developers work with Filament components.
 
 ## Quick Start
 
@@ -19,7 +19,7 @@ pnpm start
 
 ### Installing via Smithery
 
-To install Starwind UI MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Boston343/starwind-ui-mcp):
+To install Filament MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Boston343/starwind-ui-mcp):
 
 ```bash
 npx -y @smithery/cli install @Boston343/starwind-ui-mcp --client claude
@@ -48,14 +48,14 @@ Detailed instructions:
 
 ## What is MCP?
 
-The Model Context Protocol (MCP) is a protocol for extending AI capabilities through local servers. This implementation provides Starwind UI-specific tools to enhance AI assistant capabilities when working with Starwind UI. For more information about MCP itself, please visit the [official documentation](https://modelcontextprotocol.io/).
+The Model Context Protocol (MCP) is a protocol for extending AI capabilities through local servers. This implementation provides Filament-specific tools to enhance AI assistant capabilities when working with Filament. For more information about MCP itself, please visit the [official documentation](https://modelcontextprotocol.io/).
 
 ## Features
 
 - **Tool-based Architecture** - Modular design for easy addition of new tools
-- **Starwind UI Documentation Tool** - Access documentation links for Starwind UI components
+- **Filament Documentation Tool** - Access documentation links for Filament components
 - **Package Manager Detection** - Detect and use the appropriate package manager (npm, yarn, pnpm)
-- **LLM Data Fetcher** - Retrieve Starwind UI information for LLMs with caching and rate limiting
+- **LLM Data Fetcher** - Retrieve Filament information for LLMs with caching and rate limiting
 - **TypeScript Implementation** - Built with TypeScript for better type safety and developer experience
 - **Standard I/O Transport** - Uses stdio for communication with AI assistants
 
@@ -63,10 +63,10 @@ The Model Context Protocol (MCP) is a protocol for extending AI capabilities thr
 
 | Tool Name             | Description                                                       |
 | --------------------- | ----------------------------------------------------------------- |
-| `init_project`        | Initializes a new Starwind UI project                             |
-| `install_component`   | Generates installation commands for Starwind UI components        |
-| `update_component`    | Generates update commands for Starwind UI components              |
-| `get_documentation`   | Returns documentation links for Starwind UI components and guides |
+| `init_project`        | Initializes a new Filament project                             |
+| `install_component`   | Generates installation commands for Filament components        |
+| `update_component`    | Generates update commands for Filament components              |
+| `get_documentation`   | Returns documentation links for Filament components and guides |
 | `fetch_llm_data`      | Fetches LLM data from starwind.dev (rate limited, with caching)   |
 | `get_package_manager` | Detects and returns the current package manager information       |
 

@@ -1,7 +1,7 @@
 {
 	"name": "@starwind-ui/mcp",
 	"version": "0.1.0",
-	"description": "The Starwind UI MCP Server",
+	"description": "The Filament MCP Server",
 	"type": "module",
 	"main": "dist/server.js",
 	"author": {
